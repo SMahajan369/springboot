@@ -2,27 +2,19 @@ package com.example.spring_boot_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class SpringBootAppApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootAppApplication.class, args);
-	}
-
-}
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
 public class SpringBootAppApplication {
 
-   @RequestMapping("/")
-   public String home() {
-       return "Hello Kubernetes!";
-   }
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootAppApplication.class, args);
+    }
 
-   public static void main(String[] args) {
-       SpringApplication.run(SpringBootAppApplication.class, args);
-   }
-
+    @RequestMapping("/")
+    public String home() {
+        return "Hello Kubernetes!";
+    }
 }
