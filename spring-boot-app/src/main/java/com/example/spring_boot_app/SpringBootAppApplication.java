@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class SpringBootAppApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootAppApplication.class, args);
+        SpringApplication app = new SpringApplication(SpringBootAppApplication.class);
+        // Force server port to 9090
+        app.setDefaultProperties(Map.of("server.port", "9090"));
+        app.run(args);
     }
 
     @RequestMapping("/")
